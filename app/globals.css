@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Application surfaces */
+  --background: #fafaf9;
+  --surface: #ffffff;
+  --foreground: #171717;
+  --muted: #737373;
+  --border: #e5e5e5;
+  --dot: #d9d9d5;
+  --accent: #4f46e5;
+  --danger: #dc2626;
+
+  /* Sticky note palette — mirrored in lib/notes/colors.ts */
+  --note-yellow: #fff0a8;
+  --note-mint: #b9f0e5;
+  --note-lavender: #dccaff;
+  --note-peach: #ffd5c9;
+  --note-sky: #c9e4ff;
+  --note-pink: #f7cde2;
+  --note-green: #ddf3d8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-dot: var(--dot);
+  --color-accent: var(--accent);
+  --color-danger: var(--danger);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+}
+
+/* Floating white controls (toolbars, panels, menus) */
+.floating-panel {
+  background: var(--surface);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Canvas dotted grid — position/size are driven by the viewport transform */
+.canvas-dots {
+  background-image: radial-gradient(var(--dot) 1.25px, transparent 1.25px);
+}
+
+/* Inline keyboard hint */
+.kbd {
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  background: #f7f7f5;
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #44403c;
+  white-space: nowrap;
+}
+
+/* Sticky-note text editor */
+.note-editor {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
